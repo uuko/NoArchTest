@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.noarchtest.databinding.ActivityMainBinding
+import com.example.noarchtest.product.ProductActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 //註冊成功，儲存Id
                 Repository(this).saveUserId(loginId)
-                val intent = Intent(this, ResultActivity::class.java)
+                val intent = Intent(this, ProductActivity::class.java)
                 intent.putExtra("ID", loginId)
 
                 startActivity(intent)

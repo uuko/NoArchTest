@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.noarchtest"
@@ -33,11 +33,34 @@ android {
     viewBinding {
         enabled = true
     }
+    flavorDimensions "default"
+    productFlavors {
+        prod {
+            dimension "default"
+        }
+        mock {
+            dimension "default"
+        }
+
+    }
+
+    sourceSets {
+        String sharedTestDir = 'src/sharedTest/java'
+        String fakeJsonDir = 'src/sharedTest/fakejson'
+        test {
+            java.srcDir sharedTestDir
+            resources.srcDirs += fakeJsonDir
+        }
+        androidTest {
+            java.srcDir sharedTestDir
+            resources.srcDirs += fakeJsonDir
+        }
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -51,5 +74,33 @@ dependencies {
     testImplementation "org.robolectric:robolectric:4.3"
 
     testImplementation 'io.mockk:mockk:1.9.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    //Rxjava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    //Http
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+
+    def koin_version = '3.0.1'//
+    // Koin for Kotlin
+    implementation "io.insert-koin:koin-core:$koin_version"
+    // Koin extended & experimental features
+    implementation "io.insert-koin:koin-core-ext:$koin_version"
+    // Koin for Unit tests
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+
+    // Koin for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
+
+    // Koin Android Experimental features
+    implementation "io.insert-koin:koin-android-ext:$koin_version"
+    def lifecycle_version = "2.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 }
