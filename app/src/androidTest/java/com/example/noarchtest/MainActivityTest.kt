@@ -1,19 +1,20 @@
 package com.example.noarchtest
 
+import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.matcher.RootMatchers.isDialog
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.filters.LargeTest
+import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import androidx.test.espresso.intent.Intents;
-import org.junit.After
 
 @LargeTest
 class MainActivityTest {
@@ -73,5 +74,39 @@ class MainActivityTest {
             ViewActions.closeSoftKeyboard()
         )
         onView(withId(R.id.password)).perform(typeText("1234"), ViewActions.closeSoftKeyboard())
+    }
+
+    fun typeLoginId(loginId: String) {
+        onView(withId(R.id.loginId)).perform(
+            typeText(loginId),
+            ViewActions.closeSoftKeyboard()
+        )
+    }
+
+    fun typePassword(password: String) {
+        onView(withId(R.id.password)).perform(
+            typeText(password),
+            ViewActions.closeSoftKeyboard()
+        )
+    }
+
+    fun tapRegisterButton() {
+        onView(withId(R.id.send)).perform(click())
+    }
+
+    fun wrongPasswordAlert() {
+        onView(withText("Error"))
+            .inRoot(isDialog())
+            .check(matches(isDisplayed()))
+    }
+
+    fun launchScreen() {
+
+        val activityScenario = ActivityScenario.launch(MainActivity::class.java)
+
+    }
+
+    fun registerSuccess() {
+        onView(withText("購買")).check(matches(isDisplayed()))
     }
 }

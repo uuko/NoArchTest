@@ -40,6 +40,7 @@ android {
         }
         mock {
             dimension "default"
+            testInstrumentationRunner "com.example.noarchtest.runner.CucumberTestRunner"
         }
 
     }
@@ -54,6 +55,7 @@ android {
         androidTest {
             java.srcDir sharedTestDir
             resources.srcDirs += fakeJsonDir
+            assets.srcDirs = ['src/androidTest/assets']
         }
     }
 }
@@ -103,4 +105,8 @@ dependencies {
     def lifecycle_version = "2.4.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+
+    androidTestImplementation 'io.cucumber:cucumber-android:4.4.0'
+    androidTestImplementation 'io.cucumber:cucumber-picocontainer:4.4.0'
 }
