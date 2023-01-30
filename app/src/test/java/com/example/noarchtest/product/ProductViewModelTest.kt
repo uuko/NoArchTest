@@ -1,5 +1,6 @@
 package com.example.noarchtest.product
 
+import RxImmediateSchedulerRule
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.noarchtest.api.ProductResponse
 import evan.chen.tutorial.mvvmretrofitsample.IProductRepository
@@ -7,10 +8,7 @@ import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.reactivex.Single
-import org.junit.Assert
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
+import org.junit.*
 
 class ProductViewModelTest {
     @get:Rule
@@ -18,6 +16,12 @@ class ProductViewModelTest {
 
     @MockK
     lateinit var stubRepository: IProductRepository
+
+    companion object {
+        @ClassRule
+        @JvmField
+        val schedulers = RxImmediateSchedulerRule()
+    }
 
     @Before
     fun setUp() {
