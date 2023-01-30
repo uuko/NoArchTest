@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "34587183394",
+    "project_id": "noarchtest",
+    "storage_bucket": "noarchtest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34587183394:android:e8fb490b123daf2bd8fd7b",
+        "android_client_info": {
+          "package_name": "com.example.noarchtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34587183394-6ljli7jb09t79goe82727ifkj13ap1uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2nIuHxWVoiN3T2kxGzoFaWsJBM96LDO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34587183394-6ljli7jb09t79goe82727ifkj13ap1uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

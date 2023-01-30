@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
-import com.example.noarchtest.R
-import com.example.noarchtest.databinding.ActivityMainBinding
 import com.example.noarchtest.databinding.ActivityProductBinding
-import evan.chen.tutorial.mvvmretrofitsample.ProductViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProductActivity : AppCompatActivity() {

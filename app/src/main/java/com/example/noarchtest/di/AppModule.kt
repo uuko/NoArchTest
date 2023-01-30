@@ -1,7 +1,7 @@
 package com.example.noarchtest.di
 
 import evan.chen.tutorial.mvvmretrofitsample.ProductRepository
-import evan.chen.tutorial.mvvmretrofitsample.ProductViewModel
+import com.example.noarchtest.product.ProductViewModel
 import com.example.noarchtest.api.BaseInterceptor
 import com.example.noarchtest.api.NetworkService
 import org.koin.androidx.viewmodel.dsl.viewModel
