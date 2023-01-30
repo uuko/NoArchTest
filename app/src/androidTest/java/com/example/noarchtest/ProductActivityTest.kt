@@ -1,5 +1,6 @@
 package com.example.noarchtest
 
+import android.service.autofill.Validators.not
 import android.view.View
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
@@ -37,9 +38,12 @@ class ProductActivityTest {
     fun buy_click() {
         //Click send button
         Espresso.onView(ViewMatchers.withId(R.id.buy)).perform(ViewActions.click())
+
+        Thread.sleep(1000);
         Espresso.onView(withText("購買成功"))
-            .inRoot(withDecorView(Matchers.not(decorView)))// Here we use decorView
+            .inRoot(withDecorView(Matchers.not(decorView)))
             .check(matches(isDisplayed()));
+
     }
 
 
