@@ -1,4 +1,4 @@
-package evan.chen.tutorial.mvvmretrofitsample
+package com.example.noarchtest.product
 
 import com.example.noarchtest.api.BuyRequest
 import com.example.noarchtest.api.BuyResponse
@@ -20,6 +20,7 @@ class ProductRepository(private val serviceApi: ServiceApi) : IProductRepository
             .map {
                 it.body()
             }
+
     }
 
     override fun buy(id: String, items: Int): Single<Boolean> {

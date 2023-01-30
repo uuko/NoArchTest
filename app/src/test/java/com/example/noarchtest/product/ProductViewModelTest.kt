@@ -3,7 +3,6 @@ package com.example.noarchtest.product
 import RxImmediateSchedulerRule
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.noarchtest.api.ProductResponse
-import evan.chen.tutorial.mvvmretrofitsample.IProductRepository
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK

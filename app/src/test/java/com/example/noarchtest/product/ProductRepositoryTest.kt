@@ -4,8 +4,6 @@ import MockAPIResponse
 import MockInterceptor
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.noarchtest.api.NetworkService
-import evan.chen.tutorial.mvvmretrofitsample.IProductRepository
-import evan.chen.tutorial.mvvmretrofitsample.ProductRepository
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test

@@ -2,7 +2,6 @@ package com.example.noarchtest.product
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import evan.chen.tutorial.mvvmretrofitsample.IProductRepository
 import evan.chen.tutorial.mvvmretrofitsample.utils.Event
 import noarchtest.SchedulerProvider
 

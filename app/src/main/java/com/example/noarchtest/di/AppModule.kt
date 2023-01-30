@@ -1,6 +1,6 @@
 package com.example.noarchtest.di
 
-import evan.chen.tutorial.mvvmretrofitsample.ProductRepository
+import com.example.noarchtest.product.ProductRepository
 import com.example.noarchtest.product.ProductViewModel
 import com.example.noarchtest.api.BaseInterceptor
 import com.example.noarchtest.api.NetworkService
