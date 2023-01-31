@@ -62,7 +62,7 @@ android {
     }
 
     firebaseAppDistribution {
-        releaseNotes = "Test Notes"
+        releaseNotes = "AAAAA"
         serviceCredentialsFile = "$rootDir/service-credentials-projectname.json"
         groups="QATeam"
     }
