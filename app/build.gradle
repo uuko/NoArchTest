@@ -106,6 +106,7 @@ dependencies {
     testImplementation "io.insert-koin:koin-test:$koin_version"
 
     // Koin for Android
+
     implementation "io.insert-koin:koin-android:$koin_version"
 
     // Koin Android Experimental features
