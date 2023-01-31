@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.appdistribution'
 }
 
 android {
@@ -58,6 +59,12 @@ android {
             resources.srcDirs += fakeJsonDir
             assets.srcDirs = ['src/androidTest/assets']
         }
+    }
+
+    firebaseAppDistribution {
+        releaseNotes = "Test Notes"
+        serviceCredentialsFile = "$rootDir/service-credentials-projectname.json"
+        groups="QATeam"
     }
 }
 
